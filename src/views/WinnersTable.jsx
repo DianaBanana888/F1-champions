@@ -28,4 +28,3 @@ export default function WinnersTable({ worldChampions, activeSeason, setActiveSe
     </tbody>
   )
 }
-

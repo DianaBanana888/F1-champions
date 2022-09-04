@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import WinnersTable from './WinnersTable.jsx'
 import ExternalWidget from './ExternalWidget.jsx'
+import { getWorldChampionsStandings } from '../ergast/fetchRequest'
 
 export default function GetRequestHooks() {
   const [worldChampions, setWorldChampions] = useState([]);
@@ -10,9 +11,7 @@ export default function GetRequestHooks() {
   activeWorldChampion = worldChampions.find((standings) => standings.season === activeSeason)?.DriverStandings[0]?.Driver?.driverId;
 
   useEffect(() => {
-    fetch('http://ergast.com/api/f1/driverstandings/1.json?limit=99&offset=55')
-      .then(response => response.json())
-      .then(data => setWorldChampions(data?.MRData?.StandingsTable?.StandingsLists));
+    getWorldChampionsStandings().then(data => setWorldChampions(data))
   }, []);
 
   return (

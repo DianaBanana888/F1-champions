@@ -4,6 +4,7 @@ import TableHeaders from './TableHeaders.jsx'
 
 export default function ExternalWidget({ season, winner }) {
   let [racesPerSeason, setRacesPerSeason] = useState([]);
+
   useEffect(() => {
     if (season === null) {
       setRacesPerSeason([]);
@@ -16,10 +17,10 @@ export default function ExternalWidget({ season, winner }) {
       })
   }, [season])
 
-  if (racesPerSeason?.length > 0) return (
+  return (racesPerSeason.length > 0) && (
     <tbody>
       <TableHeaders headers={['Round', 'Race Name', 'Winner Name']} />
-      {racesPerSeason?.map((race) =>
+      {racesPerSeason.map((race) =>
         <tr
           key={`${race?.season}-${race?.round}`}
           className={

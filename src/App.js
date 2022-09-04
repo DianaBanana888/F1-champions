@@ -1,12 +1,12 @@
 import './App.css';
-import GetRequestHooks from './views/GetRequestHooks.jsx';
+import TableRender from './views/TableRender.jsx';
 
 
 
 function App() {
   return (
     <div className="App">
-      <GetRequestHooks />
+      <TableRender />
     </div>
   );
 }

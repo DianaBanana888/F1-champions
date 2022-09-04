@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './ExternalWidget.css';
 import TableHeaders from './TableHeaders.jsx'
-import { getSeasonStandings } from '../ergast/fetchRequest'
+import { getSeasonRacesStandings } from '../ergast/fetchRequest'
 
 export default function ExternalWidget({ season, winner }) {
   let [racesPerSeason, setRacesPerSeason] = useState([]);
@@ -11,7 +11,7 @@ export default function ExternalWidget({ season, winner }) {
       setRacesPerSeason([]);
       return;
     }
-    getSeasonStandings(season).then(data => setRacesPerSeason(data))
+    getSeasonRacesStandings(season).then(data => setRacesPerSeason(data))
   }, [season])
 
   return (racesPerSeason.length > 0) && (

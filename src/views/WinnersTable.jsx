@@ -20,8 +20,8 @@ export default function WinnersTable({ worldChampions, activeSeason, setActiveSe
           key={winner?.season}
           onClick={() => handleClick(winner?.season)}
         >
-          <WinnersTableCell props={{ parameter: 'season', value: winner?.season }} />
-          <WinnersTableCell props={{ parameter: 'winner', value: winner?.DriverStandings[0]?.Driver?.familyName + ' ' + winner?.DriverStandings[0]?.Driver?.givenName }} />
+          <WinnersTableCell props={winner?.season} />
+          <WinnersTableCell props={winner?.DriverStandings[0]?.Driver?.familyName + ' ' + winner?.DriverStandings[0]?.Driver?.givenName} />
         </tr>
       )
       }

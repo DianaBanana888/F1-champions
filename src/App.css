@@ -18,7 +18,8 @@
   display: flex;
   padding-top: 50px;
   justify-content: center;
+  text-align: center;
   width: 100%;
   line-height: 70px;
-  background-color: goldenrod;
+  background-color: #EDB749;
 }

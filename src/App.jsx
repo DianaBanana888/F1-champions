@@ -10,15 +10,13 @@ function App() {
       </MediaQuery>
       <MediaQuery minWidth={700}>
         <div className="intro">
-          <span>
-            F1 world champions starting from 2005 until now.
+          F1 world champions starting from 2005 until now.
             <br />
-            Click on an item to see the list of the winners for every race for the selected year.
-          </span>
+          Click on an item to see the list of the winners for every race for the selected year.
         </div>
       </MediaQuery>
 
-      <div className="render render-small">
+      <div className="render">
         <TableRender />
       </div>
     </>

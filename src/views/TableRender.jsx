@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import WinnersTable from './WinnersTable.jsx'
 import ExternalWidget from './ExternalWidget.jsx'
 import { getWorldChampionsStandings } from '../ergast/fetchRequest'
+import './TableRender.css'
+import classNames from 'classnames'
 
 export default function GetRequestHooks() {
   const [worldChampions, setWorldChampions] = useState([]);
@@ -16,11 +18,16 @@ export default function GetRequestHooks() {
 
   return (
     <>
-      <table className="winner-seasons-table">
+      <table className="table winner-seasons-table">
         <WinnersTable worldChampions={worldChampions} activeSeason={activeSeason} setActiveSeason={setActiveSeason} />
       </table>
 
-      <table className="winner-rounds-table">
+      <table className={
+        classNames(
+          activeSeason && 'table',
+          "winner-races-table",
+        )
+      }>
         <ExternalWidget season={activeSeason} winner={activeWorldChampion} />
       </table>
     </>

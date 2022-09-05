@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './ExternalWidget.css';
 import TableHeaders from './TableHeaders.jsx'
 import { getSeasonRacesStandings } from '../ergast/fetchRequest'
+import classNames from 'classnames'
 
 export default function ExternalWidget({ season, winner }) {
   let [racesPerSeason, setRacesPerSeason] = useState([]);
@@ -21,17 +22,20 @@ export default function ExternalWidget({ season, winner }) {
         <tr
           key={`${race?.season}-${race?.round}`}
           className={
-            winner === race?.Results[0]?.Driver?.driverId
-              ? 'winner'
-              : null
+            classNames(
+              'race',
+              winner === race?.Results[0]?.Driver?.driverId
+                ? 'winner'
+                : null,
+            )
           }>
-          <td>
+          <td className={'race-round'}>
             {race?.round}
           </td>
-          <td>
+          <td className={'race-name'}>
             {race?.raceName}
           </td>
-          <td>
+          <td className={'race-driver'}>
             {race?.Results[0]?.Driver?.familyName + ' ' + race?.Results[0]?.Driver?.givenName}
           </td>
         </tr>

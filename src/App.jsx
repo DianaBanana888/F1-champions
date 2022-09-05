@@ -1,7 +1,5 @@
 import './App.css';
-import TableRender from './views/TableRender.jsx';
-
-
+import TableRender from './views/TableRender';
 
 function App() {
   return (

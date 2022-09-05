@@ -1,3 +1,11 @@
-.winner {
-  background-color: greenyellow;
+.race-round {
+  width: 10%
+}
+
+.race-name {
+  width: 50%
+}
+
+.race-driver {
+  width: 40%
 }

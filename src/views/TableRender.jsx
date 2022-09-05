@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import WinnersTable from './WinnersTable.jsx'
-import ExternalWidget from './ExternalWidget.jsx'
-import { getWorldChampionsStandings } from '../ergast/fetchRequest'
-import './TableRender.css'
-import classNames from 'classnames'
+import classNames from 'classnames';
+import WinnersTable from './WinnersTable';
+import ExternalWidget from './ExternalWidget';
+import { getWorldChampionsStandings } from '../ergast/fetchRequest';
+import './TableRender.css';
 
 export default function GetRequestHooks() {
   const [worldChampions, setWorldChampions] = useState([]);
@@ -13,23 +13,31 @@ export default function GetRequestHooks() {
   const expectedOffset = yearStart - yearDataStart;
 
   let activeWorldChampion = null;
-  activeWorldChampion = worldChampions.find((standings) => standings.season === activeSeason)?.DriverStandings[0]?.Driver?.driverId;
+  activeWorldChampion = worldChampions
+    .find((standings) => standings.season === activeSeason)
+    ?.DriverStandings[0]?.Driver?.driverId;
 
   useEffect(() => {
-    getWorldChampionsStandings(expectedOffset).then(data => setWorldChampions(data))
-  }, []);
+    getWorldChampionsStandings(expectedOffset).then((data) => setWorldChampions(data));
+  }, [expectedOffset]);
 
   return (
     <>
       <table className="table winner-seasons-table">
-        <WinnersTable worldChampions={worldChampions} activeSeason={activeSeason} setActiveSeason={setActiveSeason} />
+        <WinnersTable
+          worldChampions={worldChampions}
+          activeSeason={activeSeason}
+          setActiveSeason={setActiveSeason}
+        />
       </table>
 
       <table className={
         classNames(
           activeSeason && 'table',
-          "winner-races-table",
-        )}>
+          'winner-races-table',
+        )
+      }
+      >
         <ExternalWidget season={activeSeason} winner={activeWorldChampion} />
       </table>
     </>

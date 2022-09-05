@@ -5,5 +5,5 @@ export default function WinnersTableCell({ props }) {
     <td>
       {props}
     </td>
-  )
-};
+  );
+}

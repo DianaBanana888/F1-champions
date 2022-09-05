@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders TableRender correctly 1`] = `
+Array [
+  <table
+    className="table winner-seasons-table"
+  >
+    <tbody>
+      <tr
+        className="header"
+      >
+        <th>
+          Season
+        </th>
+        <th>
+          World Champion
+        </th>
+      </tr>
+    </tbody>
+  </table>,
+  <table
+    className="winner-races-table"
+  />,
+]
+`;

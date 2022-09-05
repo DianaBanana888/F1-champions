@@ -8,12 +8,15 @@ import classNames from 'classnames'
 export default function GetRequestHooks() {
   const [worldChampions, setWorldChampions] = useState([]);
   const [activeSeason, setActiveSeason] = useState(null);
+  const yearDataStart = 1950;
+  const yearStart = 2005;
+  const expectedOffset = yearStart - yearDataStart;
 
   let activeWorldChampion = null;
   activeWorldChampion = worldChampions.find((standings) => standings.season === activeSeason)?.DriverStandings[0]?.Driver?.driverId;
 
   useEffect(() => {
-    getWorldChampionsStandings().then(data => setWorldChampions(data))
+    getWorldChampionsStandings(expectedOffset).then(data => setWorldChampions(data))
   }, []);
 
   return (
@@ -26,8 +29,7 @@ export default function GetRequestHooks() {
         classNames(
           activeSeason && 'table',
           "winner-races-table",
-        )
-      }>
+        )}>
         <ExternalWidget season={activeSeason} winner={activeWorldChampion} />
       </table>
     </>

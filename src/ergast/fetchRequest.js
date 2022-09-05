@@ -1,7 +1,7 @@
 const ergastApiBaseUrl = 'https://ergast.com/api/f1/';
 
-export const getWorldChampionsStandings = async () => {
-  const response = await fetch(`${ergastApiBaseUrl}driverstandings/1.json?limit=99&offset=55`);
+export const getWorldChampionsStandings = async (expectedOffset) => {
+  const response = await fetch(`${ergastApiBaseUrl}driverstandings/1.json?limit=99&offset=${expectedOffset}`);
   return (await response.json())?.MRData?.StandingsTable?.StandingsLists;
 };
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import MediaQuery from 'react-responsive';
-import TableRender from '../views/TableRender';
+import TableRender from '../views/TableRender/TableRender';
 
 function App() {
   return (

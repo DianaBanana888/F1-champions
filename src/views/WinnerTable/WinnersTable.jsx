@@ -1,6 +1,6 @@
 import React from 'react';
-import WinnersTableCell from './WinnersTableCell';
-import TableHeaders from './TableHeaders';
+import WinnersTableCell from '../WinnersTableCell';
+import TableHeaders from '../TableHeaders';
 
 export default function WinnersTable({ worldChampions, activeSeason, setActiveSeason }) {
   function handleClick(selectedSeason) {

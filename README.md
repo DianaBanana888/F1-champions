@@ -8,6 +8,36 @@
 This is a test assignment for a frontend developer position.\
 The project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Task
+
+It was necessary to make a single page web application that:
+- uses http://ergast.com/mrd/ API
+- shows the F1 world champions starting from 2005
+- shows the list of the winners for every race in a selected year.\
+  Rows where the year champion won a race must be highlighted.
+
+Focus on clean and reusable code. Preferably implemented in React, Angular or VueJS framework.
+
+## Architecture and decisions
+
+It's a **Single Page Application** as test assignment explicitly asks for it.
+
+As for main framework I chose **React**. It's easy to work with, it's fast. React has a large community and nice documentation.
+
+I intentionally didn't use external component libraries (for example, [React Material UI](https://mui.com/), [Bootstrap](https://getbootstrap.com/docs/3.4/)) to focus on making React components and styling with CSS.
+
+I think it's important for projects to follow some coding guidelines, especially when working in teams. For this assignment I decided to use [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript). The **coding guidelines are enforced by ESLint** (see `eslintConfig` prop in `package.json`)
+
+Work with Ergast API is located in a separate file to it more reusable.
+
+
+## Features
+
+- All requested functionaly is implemented
+- Responsive UI (Components layout differs based on screen width (less 700px or more 700px))
+- Clean and lean UI Design
+- Tests
+
 ## Prerequisites
 
 - [Git](https://git-scm.com/)

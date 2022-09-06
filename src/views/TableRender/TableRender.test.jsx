@@ -1,10 +1,11 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import TableRender from './TableRender';
 
-test('render table for future information', () => {
+test('render table sceleton for world champions', () => {
   render(<TableRender />);
-  const isTable = document.getElementsByTagName('table')[0];
+  const isTable = screen.getAllByRole('table')[0];
   expect(isTable).toBeInTheDocument();
 });
 

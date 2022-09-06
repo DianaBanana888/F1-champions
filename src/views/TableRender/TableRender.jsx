@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import classNames from 'classnames';
-import WinnersTable from './WinnersTable';
-import ExternalWidget from './ExternalWidget';
-import { getWorldChampionsStandings } from '../ergast/fetchRequest';
+import WinnersTable from '../WinnerTable/WinnersTable';
+import ExternalWidget from '../ExternalWidget';
+import { getWorldChampionsStandings } from '../../ergast/fetchRequest';
 import './TableRender.css';
 
 export default function GetRequestHooks() {
